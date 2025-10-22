@@ -11,7 +11,6 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar";
-import { ThreadList } from "@/components/assistant-ui/thread-list";
 
 const securityHighlights = [
   {

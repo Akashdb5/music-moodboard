@@ -35,12 +35,11 @@ const imageAsyncAuthorization = auth0AI.withAsyncAuthorization({
 
 export const withSpotify = withSpotifyToken;
 
-export const withSpotifyPlaylistConfirmation = <T extends Tool<any, any>>(
-  tool: T,
-) =>
-  withSpotifyToken(tool) as T;
+export const withSpotifyPlaylistConfirmation = <Input, Output>(
+  tool: Tool<Input, Output>,
+): Tool<Input, Output> => withSpotifyToken(tool);
 
-export const withSpotifyImageConfirmation = <T extends Tool<any, any>>(
-  tool: T,
-) =>
-  withSpotifyToken(imageAsyncAuthorization(tool)) as T;
+export const withSpotifyImageConfirmation = <Input, Output>(
+  tool: Tool<Input, Output>,
+): Tool<Input, Output> =>
+  withSpotifyToken(imageAsyncAuthorization(tool));

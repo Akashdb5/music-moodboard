@@ -2,7 +2,7 @@ import {
   createUIMessageStream,
   createUIMessageStreamResponse,
   streamText,
-  type Tool,
+  type ToolSet,
   type UIMessage,
   convertToModelMessages,
 } from "ai";
@@ -38,7 +38,7 @@ export async function POST(req: Request) {
     model?: string;
   } = await req.json();
 
-  const tools: Record<string, Tool> = { ...spotifyTools, ...ragTools };
+  const tools: ToolSet = { ...spotifyTools, ...ragTools };
   const modelMessages = convertToModelMessages(messages);
 
   setAIContext({
@@ -107,10 +107,9 @@ export async function POST(req: Request) {
           system: systemPrompt,
           messages: modelMessages,
           tools,
-          maxSteps: 12,
           stopSequences: [],
           stopWhen: [],
-        } as any);
+        });
 
         writer.merge(
           result.toUIMessageStream({

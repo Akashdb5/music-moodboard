@@ -327,8 +327,9 @@ const rawListPlaylists = defineTool({
   schema: listPlaylistsParameters,
   execute: async (
     { limit }: z.infer<typeof listPlaylistsParameters>,
-    _options,
+    options,
   ): Promise<ListPlaylistsResult> => {
+    void options;
     const accessToken = getAccessTokenFromTokenVault();
 
     const data = await spotifyFetch<{
@@ -396,8 +397,9 @@ const rawSearchSpotify = defineTool({
     types,
     limit,
   }: z.infer<typeof searchSpotifyParameters>,
-  _options,
+  options,
   ): Promise<SearchSpotifyResult> => {
+    void options;
     const accessToken = getAccessTokenFromTokenVault();
     const searchParams = new URLSearchParams({
       q: query,
@@ -521,8 +523,9 @@ const rawGetTrackDetails = defineTool({
   schema: getTrackDetailsParameters,
   execute: async (
     { trackId }: z.infer<typeof getTrackDetailsParameters>,
-    _options,
+    options,
   ): Promise<TrackDetailsResult> => {
+    void options;
     const accessToken = getAccessTokenFromTokenVault();
     const id = extractSpotifyId(trackId, "track");
 
@@ -559,8 +562,9 @@ const rawGetAudioFeatures = defineTool({
   schema: getAudioFeaturesParameters,
   execute: async (
     { trackId }: z.infer<typeof getAudioFeaturesParameters>,
-    _options,
+    options,
   ): Promise<AudioFeaturesResult> => {
+    void options;
     const accessToken = getAccessTokenFromTokenVault();
     const id = extractSpotifyId(trackId, "track");
 
@@ -594,7 +598,9 @@ const getUserProfileParameters = z.object({});
 const rawGetUserProfile = defineTool({
   description: "Get the current Spotify user profile",
   schema: getUserProfileParameters,
-  execute: async (_input, _options): Promise<UserProfileResult> => {
+  execute: async (input, options): Promise<UserProfileResult> => {
+    void input;
+    void options;
     const accessToken = getAccessTokenFromTokenVault();
     const user = await getCurrentUser(accessToken);
 
@@ -622,8 +628,9 @@ const rawCreatePlaylist = defineTool({
     description,
     isPublic,
   }: z.infer<typeof createPlaylistParameters>,
-  _options,
+  options,
   ): Promise<CreatePlaylistResult> => {
+    void options;
     const accessToken = getAccessTokenFromTokenVault();
     const user = await getCurrentUser(accessToken);
 
@@ -668,8 +675,9 @@ const rawAddTracksToPlaylist = defineTool({
     trackUris,
     position,
   }: z.infer<typeof addTracksToPlaylistParameters>,
-  _options,
+  options,
   ): Promise<AddTracksResult> => {
+    void options;
     const accessToken = getAccessTokenFromTokenVault();
     const id = extractSpotifyId(playlistId, "playlist");
     const uris = trackUris.map(toTrackUri);
@@ -903,8 +911,9 @@ const rawGetPlaylistDetails = defineTool({
     playlistId,
     limit,
   }: z.infer<typeof getPlaylistDetailsParameters>,
-  _options,
+  options,
   ): Promise<PlaylistDetailsResult> => {
+    void options;
     const accessToken = getAccessTokenFromTokenVault();
     const id = extractSpotifyId(playlistId, "playlist");
 
@@ -985,8 +994,9 @@ const rawGetRecommendations = defineTool({
     targetDanceability,
     targetTempo,
   }: z.infer<typeof recommendationParameters>,
-  _options,
+  options,
   ): Promise<RecommendationsResult> => {
+    void options;
     const accessToken = getAccessTokenFromTokenVault();
 
     const params = new URLSearchParams({
