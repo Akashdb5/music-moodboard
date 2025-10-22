@@ -95,7 +95,7 @@ const ThreadWelcome: FC = () => {
             exit={{ opacity: 0, y: 10 }}
             className="aui-thread-welcome-message-motion-1 text-2xl font-semibold"
           >
-            Hello there!
+            Hey there, rhythm seeker!
           </m.div>
           <m.div
             initial={{ opacity: 0, y: 10 }}
@@ -104,7 +104,7 @@ const ThreadWelcome: FC = () => {
             transition={{ delay: 0.1 }}
             className="aui-thread-welcome-message-motion-2 text-2xl text-muted-foreground/65"
           >
-            How can I help you today?
+            Tell me the vibe and I’ll score the moment.
           </m.div>
         </div>
       </div>
@@ -118,24 +118,24 @@ const ThreadSuggestions: FC = () => {
     <div className="aui-thread-welcome-suggestions grid w-full gap-2 pb-4 @md:grid-cols-2">
       {[
         {
-          title: "What's the weather",
-          label: "in San Francisco?",
-          action: "What's the weather in San Francisco?",
+          title: "Curate a vibe",
+          label: "for a midnight walk in Tokyo",
+          action: "Curate a Spotify playlist for a midnight walk in Tokyo.",
         },
         {
-          title: "Explain React hooks",
-          label: "like useState and useEffect",
-          action: "Explain React hooks like useState and useEffect",
+          title: "Summarize what all things you can do",
+          label: "using the knowledge base",
+          action: "Use the knowledge base to summarize the things you can do.",
         },
         {
-          title: "Write a SQL query",
-          label: "to find top customers",
-          action: "Write a SQL query to find top customers",
+          title: "Discover mellow tracks",
+          label: "for a deep-focus work session",
+          action: "Find mellow Spotify tracks for a deep-focus work session.",
         },
         {
-          title: "Create a meal plan",
-          label: "for healthy weight loss",
-          action: "Create a meal plan for healthy weight loss",
+          title: "Review my recent plays",
+          label: "and suggest what to queue next",
+          action: "Check my recent Spotify plays and suggest what to queue next.",
         },
       ].map((suggestedAction, index) => (
         <m.div
