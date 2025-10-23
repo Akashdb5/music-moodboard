@@ -17,7 +17,9 @@ export const UserNav = () => {
   if (!user) {
     return (
       <Button asChild size="sm">
-        <Link href="/auth/login">Log in</Link>
+        <Link href="/auth/login" prefetch={false}>
+          Log in
+        </Link>
       </Button>
     );
   }
@@ -47,7 +49,9 @@ export const UserNav = () => {
         ) : null}
       </div>
       <Button asChild size="sm" variant="outline">
-        <Link href="/auth/logout">Log out</Link>
+        <Link href="/auth/logout" prefetch={false}>
+          Log out
+        </Link>
       </Button>
     </div>
   );

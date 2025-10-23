@@ -205,13 +205,15 @@ export default async function Home() {
             Auth0-powered access controls. Sign in to sync and explore your assistant conversations.
           </p>
           <div className="flex flex-col items-center gap-3 sm:flex-row">
-            <Button
-              asChild
-              size="lg"
-              className="w-full bg-[#1DB954] text-[#0E021C] shadow-[0_0_35px_rgba(29,185,84,0.35)] transition hover:bg-[#17a54a] hover:shadow-[0_0_45px_rgba(29,185,84,0.45)] sm:w-auto"
-            >
-              <Link href="/auth/login">Sign in with Auth0</Link>
-            </Button>
+          <Button
+            asChild
+            size="lg"
+            className="w-full bg-[#1DB954] text-[#0E021C] shadow-[0_0_35px_rgba(29,185,84,0.35)] transition hover:bg-[#17a54a] hover:shadow-[0_0_45px_rgba(29,185,84,0.45)] sm:w-auto"
+          >
+            <Link href="/auth/login" prefetch={false}>
+              Sign in with Auth0
+            </Link>
+          </Button>
 
           </div>
         </div>
