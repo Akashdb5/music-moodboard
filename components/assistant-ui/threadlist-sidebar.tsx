@@ -96,7 +96,7 @@ export function ThreadListSidebar({
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
               <Link
-                href="https://github.com/assistant-ui/assistant-ui"
+                href="https://github.com/Akashdb5/music-moodboard"
                 target="_blank"
               >
                 <div className="aui-sidebar-footer-icon-wrapper flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
